@@ -11,7 +11,9 @@ SCHEDULER.every '1h', :first_in => 0 do |job|
   ).execute
 
   parsed_data = JSON.parse(returned_data)
-  $results = parsed_data['data']['results']
+  results = parsed_data['data']['results']
 
-  send_event('issue_big_picture', image: $results[0]['images'].first['path'] + '.jpg')
+  puts results.length
+
+  send_event('issue_big_picture', image: results[0]['images'].first['path'] + '.jpg')
 end
