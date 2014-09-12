@@ -1,7 +1,7 @@
 require 'rest_client'
 require_relative 'get_comics.rb'
 
-SCHEDULER.every '7s', :first_in => 0 do |job|
+SCHEDULER.every '7s', :first_in => 1 do |job|
   results = $results.rotate!
   send_event('issue_big_picture', image: results[0]['images'].first['path'] + '.jpg')
   send_event('issue_title', title: results[0]['title'])
