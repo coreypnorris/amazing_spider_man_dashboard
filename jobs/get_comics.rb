@@ -15,5 +15,5 @@ SCHEDULER.every '5s', :first_in => 0 do |job|
 
   # send_event('issue_big_picture', image: results[0]['images'].first['path'] + '.jpg')
   send_event('issue_title', title: timestamp)
-  # send_event('issue_description', text: settings.marvel_public_key)
+  send_event('issue_description', text: settings.marvel_public_key)
 end
