@@ -6,8 +6,8 @@ DashingContrib.configure
 
 configure do
   set :auth_token, 'YOUR_AUTH_TOKEN'
-  set :marvel_private_key, ENV['MARVEL_PRIVATE_KEY']
   set :marvel_public_key, ENV['MARVEL_PUBLIC_KEY']
+  set :marvel_private_key, ENV['MARVEL_PRIVATE_KEY']
 
   helpers do
     def protected!
