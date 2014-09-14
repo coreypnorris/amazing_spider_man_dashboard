@@ -9,6 +9,8 @@ You can visit a live version of the site at http://marvel-comics-dashboard.herok
 * Every 10 seconds a new book is emphasized with it's title and description.
 * Every hour the app checks for new books and updates the widgets accordingly.
 
+####Instructions
+
 After downloading the app run the `bundle` command in your terminal to install the gems. Then create a file in the root directory and name it `.env` (click OK if you get a popup). Then in the .env file create the enviornment variables for your Marvel API Keys like this.
 
 ##### .env
