@@ -26,13 +26,15 @@ SCHEDULER.every '20s', :first_in => '10s' do |job|
     end
   end
 
-  sale_date = DateTime.parse(rotated_results[0]["dates"][0]["date"]).to_date.to_s
+  sale_date = DateTime.parse(rotated_results[0]["dates"][0]["date"]).to_date
+  formatted_sale_date = sale_date.strftime("%B %d, %Y")
 
   send_event('asm_issue_big_picture', image: rotated_results[0]['images'].first['path'] + '.jpg')
-  send_event('asm_issue_title', title: rotated_results[0]['title'])
+  send_event('asm_issue_description', title: rotated_results[0]['title'])
   send_event('asm_issue_description', text: rotated_results[0]['description'])
   send_event('asm_creators', text: creators_string)
-  send_event('asm_sale_date', text: sale_date)
+  send_event('asm_sale_date', text: formatted_sale_date)
+  send_event('asm_sale_price', text: rotated_results[0]["prices"][0]["price"].to_s)
   # send_event('asm_preview_thumbnail_3', text: rotated_results[0])
   # send_event('asm_preview_thumbnail_4', text: rotated_results[0])
 end
