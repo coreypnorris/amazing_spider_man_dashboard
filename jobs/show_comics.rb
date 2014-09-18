@@ -35,6 +35,4 @@ SCHEDULER.every '20s', :first_in => '10s' do |job|
   send_event('asm_creators', text: creators_string)
   send_event('asm_sale_date', text: formatted_sale_date)
   send_event('asm_sale_price', text: rotated_results[0]["prices"][0]["price"].to_s)
-  # send_event('asm_preview_thumbnail_3', text: rotated_results[0])
-  # send_event('asm_preview_thumbnail_4', text: rotated_results[0])
 end

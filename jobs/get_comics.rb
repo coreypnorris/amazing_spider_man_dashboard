@@ -26,8 +26,3 @@ SCHEDULER.every '1h', :first_in => 0 do |job|
   parsed_data = JSON.parse(returned_data)
   $amazing_spider_man_results = parsed_data['data']['results']
 end
-
-# image               title
-#                     description
-# creators    saleDate price
-
