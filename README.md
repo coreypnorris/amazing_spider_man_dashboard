@@ -7,7 +7,7 @@ Right now the app loads two different dashboards and you can view online version
 
 * http://marvel-comics-dashboard.herokuapp.com/this_weeks_comics cycles through all the comics that are on sale this week at a rate of one comic every 5 seconds.
 
-* http://marvel-comics-dashboard.herokuapp.com/amazing_spider_man cycles through every issue of Amazing Spider-Man at a rate of one comic every 20 seconds.
+* http://marvel-comics-dashboard.herokuapp.com/amazing_spider_man cycles through the first 100 issues of Amazing Spider-Man at a rate of one comic every 20 seconds.
 
 ####Instructions
 
