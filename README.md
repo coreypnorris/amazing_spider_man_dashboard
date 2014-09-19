@@ -17,4 +17,6 @@ After downloading the app run the `bundle` command in your terminal to install t
 MARVEL_PUBLIC_KEY=yourpublickeygoeshere<br />
 MARVEL_PRIVATE_KEY=yourprivatekeygoeshere
 
+Then add `.env` to the .gitignore file so that, if you choose to upload the app to Github, it will ignore the file with your keys so they don't get stolen.
+
 Then run `dashing start` in your terminal and navigate to http://localhost:3030/this_weeks_comics in your browser.
