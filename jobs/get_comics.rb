@@ -14,7 +14,7 @@ SCHEDULER.every '1h', :first_in => 0 do |job|
   $weekly_comics_results = parsed_data['data']['results']
 end
 
-SCHEDULER.every '1h', :first_in => '10s' do |job|
+SCHEDULER.every '1h', :first_in => '30s' do |job|
   timestamp = Time.now.to_s.gsub(/\s+/, "")
   hash = Digest::MD5.hexdigest(timestamp + settings.marvel_private_key + settings.marvel_public_key)
 
@@ -27,7 +27,7 @@ SCHEDULER.every '1h', :first_in => '10s' do |job|
   $asm_results = parsed_data['data']['results']
 end
 
-SCHEDULER.every '1h', :first_in => '20s' do |job|
+SCHEDULER.every '1h', :first_in => '1m' do |job|
   timestamp = Time.now.to_s.gsub(/\s+/, "")
   hash = Digest::MD5.hexdigest(timestamp + settings.marvel_private_key + settings.marvel_public_key)
 

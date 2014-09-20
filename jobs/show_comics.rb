@@ -16,7 +16,7 @@ SCHEDULER.every '5s', :first_in => '10s' do |job|
 end
 
 # Amazing Spider-Man dashboard
-SCHEDULER.every '20s', :first_in => '10s' do |job|
+SCHEDULER.every '20s', :first_in => '1m' do |job|
   creators_string = ""
 
   $asm_results[0]["creators"]["items"].each do |item|
@@ -43,7 +43,7 @@ end
 
 
 # Captain America dashboard
-SCHEDULER.every '20s', :first_in => '10s' do |job|
+SCHEDULER.every '20s', :first_in => '2m' do |job|
   creators_string = ""
 
   $cap_results[0]["creators"]["items"].each do |item|
