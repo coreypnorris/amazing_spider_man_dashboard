@@ -3,7 +3,7 @@ require_relative 'get_comics.rb'
 
 
 # Weekly comics dashboard
-SCHEDULER.every '5s', :first_in => '10s' do |job|
+SCHEDULER.every '5s', :first_in => '5s' do |job|
   send_event('twc_big_picture', image: $weekly_comics_results[0]['images'].first['path'] + '.jpg')
   send_event('twc_title', title: $weekly_comics_results[0]['title'])
   send_event('twc_description', text: $weekly_comics_results[0]['description'])
@@ -16,7 +16,7 @@ SCHEDULER.every '5s', :first_in => '10s' do |job|
 end
 
 # Amazing Spider-Man dashboard
-SCHEDULER.every '20s', :first_in => '10s' do |job|
+SCHEDULER.every '20s', :first_in => '30s' do |job|
   creators_string = ""
 
   $asm_results[0]["creators"]["items"].each do |item|
@@ -42,7 +42,7 @@ SCHEDULER.every '20s', :first_in => '10s' do |job|
 end
 
 # Captain America dashboard
-SCHEDULER.every '20s', :first_in => '10s' do |job|
+SCHEDULER.every '20s', :first_in => '1m' do |job|
   creators_string = ""
 
   $cap_results[0]["creators"]["items"].each do |item|
