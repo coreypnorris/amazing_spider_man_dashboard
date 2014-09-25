@@ -3,7 +3,7 @@
 A Dashing app (http://dashing.io/) that makes use of the Marvel Comics developer API (http://developer.marvel.com/) to display different statistics about Marvel comics.
 
 ####The Dashboards
-Right now the app loads two different dashboards and you can view online versions of them at the following urls:
+Right now the app loads three different dashboards and you can view online versions of them at the following urls:
 
 * http://marvel-comics-dashboards.herokuapp.com/this_weeks_comics cycles through all the comics that are on sale this week at a rate of one comic every 5 seconds.
 
