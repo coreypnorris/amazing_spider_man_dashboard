@@ -64,3 +64,53 @@ SCHEDULER.every '20s', :first_in => '3m' do |job|
 
   $cap_results.rotate!
 end
+
+# Thor dashboard
+SCHEDULER.every '20s', :first_in => '4m' do |job|
+  creators_string = ""
+  creators_array = []
+
+  $thor_results.first["creators"]["items"].each do |i|
+    creators_array << i.select{ |k,v| k != 'resourceURI' }
+  end
+
+  creators_array.map!{ |i| i.values.join(": ") }
+  creators_string = creators_array.join(", ")
+
+  sale_date = DateTime.parse($thor_results.first["dates"].first["date"]).to_date
+  formatted_sale_date = sale_date.strftime("%B %d, %Y")
+
+  send_event('thor_big_picture', image: $thor_results.first['images'].first['path'] + '.jpg')
+  send_event('thor_title', text: $thor_results.first['title'])
+  send_event('thor_description', text: $thor_results.first["description"].to_s)
+  send_event('thor_creators', text: creators_string)
+  send_event('thor_sale_date', text: formatted_sale_date)
+  send_event('thor_sale_price', text: "$" + $thor_results.first["prices"].first["price"].to_s)
+
+  $thor_results.rotate!
+end
+
+# Iron Man dashboard
+SCHEDULER.every '20s', :first_in => '5m' do |job|
+  creators_string = ""
+  creators_array = []
+
+  $iron_man_results.first["creators"]["items"].each do |i|
+    creators_array << i.select{ |k,v| k != 'resourceURI' }
+  end
+
+  creators_array.map!{ |i| i.values.join(": ") }
+  creators_string = creators_array.join(", ")
+
+  sale_date = DateTime.parse($iron_man_results.first["dates"].first["date"]).to_date
+  formatted_sale_date = sale_date.strftime("%B %d, %Y")
+
+  send_event('iron_man_big_picture', image: $iron_man_results.first['images'].first['path'] + '.jpg')
+  send_event('iron_man_title', text: $iron_man_results.first['title'])
+  send_event('iron_man_description', text: $iron_man_results.first["description"].to_s)
+  send_event('iron_man_creators', text: creators_string)
+  send_event('iron_man_sale_date', text: formatted_sale_date)
+  send_event('iron_man_sale_price', text: "$" + $iron_man_results.first["prices"].first["price"].to_s)
+
+  $iron_man_results.rotate!
+end
