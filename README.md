@@ -11,6 +11,10 @@ Right now the app loads three different dashboards and you can view online versi
 
 * http://marvel-comics-dashboards.herokuapp.com/captain_america cycles through the first 100 issues of Captain America Comics at a rate of one comic every 20 seconds.
 
+* http://marvel-comics-dashboards.herokuapp.com/captain_america cycles through the first 100 issues of Thor at a rate of one comic every 20 seconds.
+
+* http://marvel-comics-dashboards.herokuapp.com/captain_america cycles through the first 100 issues of Iron Man at a rate of one comic every 20 seconds.
+
 ####Instructions
 
 After downloading the app run the `bundle` command in your terminal to install the gems. Then create a file in the root directory and name it `.env` (click OK if you get a popup). Then in the .env file create the enviornment variables for your Marvel API Keys like this.
