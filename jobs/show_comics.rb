@@ -30,7 +30,7 @@ SCHEDULER.every '20s', :first_in => '2m' do |job|
   sale_date = DateTime.parse($asm_results.first["dates"].first["date"]).to_date
   formatted_sale_date = sale_date.strftime("%B %d, %Y")
 
-  send_event('asm_big_picture', image: $asm_results.first['images'].first['path'] + '.jpg')
+  send_event('asm_big_picture', image: $asm_results.first['images'].empty? ? 'http://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png' : $asm_results.first['images'].first['path'] + '.jpg')
   send_event('asm_title', text: $asm_results.first['title'])
   send_event('asm_description', text: $asm_results.first["description"].to_s)
   send_event('asm_creators', text: creators_string)
@@ -55,7 +55,7 @@ SCHEDULER.every '20s', :first_in => '3m' do |job|
   sale_date = DateTime.parse($cap_results.first["dates"].first["date"]).to_date
   formatted_sale_date = sale_date.strftime("%B %d, %Y")
 
-  send_event('cap_big_picture', image: $cap_results.first['images'].first['path'] + '.jpg')
+  send_event('cap_big_picture', image: $cap_results.first['images'].empty? ? 'http://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png' : $cap_results.first['images'].first['path'] + '.jpg')
   send_event('cap_title', text: $cap_results.first['title'])
   send_event('cap_description', text: $cap_results.first["description"].to_s)
   send_event('cap_creators', text: creators_string)
