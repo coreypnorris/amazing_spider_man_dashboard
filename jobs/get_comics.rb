@@ -26,7 +26,7 @@ SCHEDULER.every '1h', :first_in => 0 do |job|
   # Get Captain America issues
   returned_data = RestClient::Request.new(
     :method => :get,
-    :url => 'http://gateway.marvel.com:80/v1/public/series/1998/comics?ts=' + timestamp + '&apikey=' + settings.marvel_public_key + '&hash=' + hash + '&limit=100&formatType=comic&noVariants=true&orderBy=issueNumber'
+    :url => 'http://gateway.marvel.com:80/v1/public/series/1996/comics?ts=' + timestamp + '&apikey=' + settings.marvel_public_key + '&hash=' + hash + '&limit=100&formatType=comic&noVariants=true&orderBy=issueNumber'
   ).execute
 
   parsed_data = JSON.parse(returned_data)
