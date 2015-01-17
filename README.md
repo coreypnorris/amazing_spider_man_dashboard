@@ -3,7 +3,6 @@
 A Dashing app (http://dashing.io/) that makes use of the Marvel Comics developer API (http://developer.marvel.com/) to display different statistics about Marvel comics.
 
 ####The Dashboards
-Right now the app loads three different dashboards and you can view online versions of them at the following urls:
 
 * http://marvel-comics-dashboards.herokuapp.com/this_weeks_comics cycles through all the comics that are on sale this week at a rate of one comic every 5 seconds.
 
@@ -17,7 +16,7 @@ Right now the app loads three different dashboards and you can view online versi
 
 ####Instructions
 
-After downloading the app run the `bundle` command in your terminal to install the gems. Then create a file in the root directory and name it `.env` (click OK if you get a popup). Then in the .env file create the enviornment variables for your Marvel API Keys like this.
+After downloading the app run the `bundle` command in your terminal to install the gems. Then create a file in the root directory and name it `.env` (click OK if you get a warning popup from your text editor). Then in the .env file create the environment variables for your Marvel API Keys like this.
 
 ##### .env
 MARVEL_PUBLIC_KEY=yourpublickeygoeshere<br />
