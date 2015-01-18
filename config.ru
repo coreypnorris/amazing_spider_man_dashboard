@@ -1,11 +1,13 @@
-$: << File.expand_path('./lib', File.dirname(__FILE__))
-require 'dashing-contrib'
+require 'sinatra'
+require 'sinatra/base'
 require 'dashing'
+require 'dashing-contrib'
+require './explorer'
 
 DashingContrib.configure
 
 configure do
-  set :auth_token, 'YOUR_AUTH_TOKEN'
+  set :auth_token, ENV['AUTH_TOKEN']
   set :marvel_public_key, ENV['MARVEL_PUBLIC_KEY']
   set :marvel_private_key, ENV['MARVEL_PRIVATE_KEY']
 
@@ -15,6 +17,10 @@ configure do
      # This method is run before accessing any resource.
     end
   end
+
+  get '/' do
+    erb :main
+  end
 end
 
 map Sinatra::Application.assets_prefix do
@@ -22,3 +28,4 @@ map Sinatra::Application.assets_prefix do
 end
 
 run Sinatra::Application
+run Rack::URLMap.new('/' => Sinatra::Application, '/explorer' => Explorer.new)
