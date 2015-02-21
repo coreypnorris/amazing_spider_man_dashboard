@@ -1,6 +1,6 @@
 ##Amazing Spider-Man Dashboard
 
-A Dashing app (http://dashing.io/) that makes use of the Marvel Comics developer API (http://developer.marvel.com/) to display the 100 issue of Amazing Spider-Man.
+A Dashing app (http://dashing.io/) that makes use of the Marvel Comics developer API (http://developer.marvel.com/) to display the first 100 issue of Amazing Spider-Man.
 
 #### Preview Image
 ![alt text](https://github.com/coreypnorris/amazing_spider_man_dashboard/blob/master/assets/images/amazing_spider_man.png "Preview Image")
