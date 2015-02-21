@@ -10,6 +10,7 @@ GEM
     backports (3.6.1)
     celluloid (0.16.0)
       timers (~> 4.0.0)
+    coderay (1.1.0)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -51,6 +52,7 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (0.6.11)
     json (1.8.1)
+    method_source (0.8.2)
     mime-types (1.25.1)
     mini_portile (0.6.0)
     minitest (5.4.1)
@@ -67,6 +69,10 @@ GEM
     netrc (0.7.7)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -102,6 +108,7 @@ GEM
       rack-test
       sinatra (~> 1.4.0)
       tilt (~> 1.3)
+    slop (3.6.0)
     sprockets (2.10.1)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -129,4 +136,6 @@ PLATFORMS
 DEPENDENCIES
   dashing
   dashing-contrib (~> 0.1.6)
+  dotenv
+  pry
   rest_client
